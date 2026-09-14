@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* Fonts are loaded with next/font/google in app/[lang]/layout.tsx and exposed
+   as CSS variables --font-fraunces and --font-dm-sans. */
+
+@theme {
+  /* Paper */
+  --color-background: #f8f5f0;
+  --color-background-alt: #efe9e2;
+  --color-secondary: #f3eee8;
+
+  /* Ink */
+  --color-foreground: #261c21;
+  --color-muted-foreground: #7a6a70;
+
+  /* Accent: fjord */
+  --color-accent: #8e2f4d;
+  --color-accent-deep: #742640;
+
+  /* Buttons */
+  --color-btn-primary: #261c21;
+  --color-btn-primary-fg: #f8f5f0;
+
+  /* Lines */
+  --color-border: #e6ddd6;
+
+  /* Dark section */
+  --color-deep: #2a1a22;
+  --color-deep-fg: #f8f5f0;
+
+  /* Nav */
+  --color-nav: #261c21;
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-dm-sans), Arial, sans-serif;
+
+  --radius: 0.375rem;
+  --shadow-sm: 0 1px 2px hsl(330 15% 10% / 4%);
+  --shadow-md: 0 2px 8px hsl(330 15% 10% / 5%);
+  --shadow-lg: 0 4px 20px hsl(330 15% 10% / 7%);
+  --shadow-lift: 0 25px 50px -12px rgba(42, 26, 34, 0.35);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+
+::selection { background: rgba(142, 47, 77, 0.16); }
+
+.nav-link { position: relative; }
+.nav-link::after {
+  content: ""; position: absolute; left: 0; bottom: -4px; height: 1.5px; width: 100%;
+  background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.2s ease;
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+.btn { transition: all 0.2s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(142, 47, 77, 0.25); }
+
+.card-lift { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+.card-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: rgba(142, 47, 77, 0.35); }
