@@ -62,7 +62,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
       <section id="services" className="scroll-mt-20">
         <Container className="py-16 md:py-24">
           <SectionTitle>{d.services.title}</SectionTitle>
-          <div className="mt-10 grid gap-[22px] md:grid-cols-3 md:gap-[30px]">
+          <div className="mt-10 grid gap-[22px] md:grid-cols-2 md:gap-[30px]">
             {d.services.items.map((s, i) => (
               <div key={s.title} className="card-lift flex flex-col rounded-lg border border-border bg-background p-7 shadow-md md:p-8">
                 <span className="font-display text-2xl text-accent">{String(i + 1).padStart(2, "0")}</span>
@@ -71,34 +71,10 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
               </div>
             ))}
           </div>
-          <Link href={`${base}#contact`} className="mt-8 inline-block text-accent underline-offset-4 hover:underline">
+          <p className="mt-8 max-w-[620px] text-lg text-muted-foreground">{d.services.outro}</p>
+          <Link href={`${base}#contact`} className="mt-4 inline-block text-accent underline-offset-4 hover:underline">
             {d.services.link} →
           </Link>
-        </Container>
-      </section>
-
-      {/* Covered */}
-      <section id="covered" className="scroll-mt-20 bg-background-alt">
-        <Container className="py-16 md:py-24">
-          <SectionTitle>{d.covered.title}</SectionTitle>
-          <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-            {d.covered.items.map((c) => (
-              <div key={c.label} className="bg-background p-6 md:p-7">
-                <p className="font-display text-xl text-accent">{c.label}</p>
-                <p className="mt-3 text-[15px] leading-relaxed text-foreground/85">{c.body}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* About / proof */}
-      <section id="about" className="scroll-mt-20">
-        <Container className="py-16 md:py-24">
-          <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:gap-14">
-            <SectionTitle>{d.about.title}</SectionTitle>
-            <p className="text-lg leading-relaxed text-foreground/85">{d.about.body}</p>
-          </div>
         </Container>
       </section>
 

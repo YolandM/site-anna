@@ -21,8 +21,6 @@ export default function Nav({ lang, copy, name }: { lang: Lang; copy: Dictionary
   const base = `/${lang}`;
   const links = [
     { href: `${base}#services`, label: copy.services },
-    { href: `${base}#covered`, label: copy.covered },
-    { href: `${base}#about`, label: copy.about },
     { href: `${base}#contact`, label: copy.contact },
   ];
   const rest = pathname.replace(/^\/(en|fr|sv)/, "");
