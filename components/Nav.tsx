@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { LANGS, type Lang, type Dictionary } from "@/lib/content";
+import { LANGS, type Lang, type Dictionary } from "@/lib/i18n";
 
 export default function Nav({ lang, copy, name }: { lang: Lang; copy: Dictionary["nav"]; name: string }) {
   const pathname = usePathname();

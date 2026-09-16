@@ -1,15 +1,26 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import LogoRow from "@/components/LogoRow";
-import { getDictionary, PERSON, type Lang } from "@/lib/content";
-import { CAL_URL } from "@/lib/site";
-import { Container, PrimaryButton, SecondaryButton, Eyebrow, Label, SectionTitle } from "@/components/ui";
+import { getDictionary, getSettings } from "@/lib/content";
+import { isLang, type Lang } from "@/lib/i18n";
+import { calEmbedUrl } from "@/lib/site";
+import {
+  Container,
+  PrimaryButton,
+  SecondaryButton,
+  Eyebrow,
+  Label,
+  SectionTitle,
+} from "@/components/ui";
 
 export default async function Page({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params;
-  const d = getDictionary(lang);
+  if (!isLang(lang)) notFound();
+  const d = await getDictionary(lang);
+  const settings = await getSettings();
   const base = `/${lang}`;
-  const calSrc = CAL_URL ? `${CAL_URL}${CAL_URL.includes("?") ? "&" : "?"}embed=true&theme=light&layout=month_view` : "";
+  const calSrc = calEmbedUrl(settings.calUrl);
 
   return (
     <>
@@ -18,14 +29,20 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
         <div
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 h-[560px]"
-          style={{ background: "radial-gradient(100% 60% at 50% 0%, rgba(142,47,77,0.14), transparent 70%)" }}
+          style={{
+            background: "radial-gradient(100% 60% at 50% 0%, rgba(142,47,77,0.14), transparent 70%)",
+          }}
         />
         <Container className="relative pt-16 pb-14 md:pt-24 md:pb-20">
           <div className="grid items-center gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
             <div>
               <Eyebrow>{d.hero.eyebrow}</Eyebrow>
-              <h1 className="mt-6 text-[clamp(2.5rem,5vw,4.1rem)] leading-[1.03]">{d.hero.headline}</h1>
-              <p className="mt-7 max-w-[620px] text-lg leading-relaxed text-muted-foreground md:text-xl">{d.hero.subhead}</p>
+              <h1 className="mt-6 text-[clamp(2.5rem,5vw,4.1rem)] leading-[1.03]">
+                {d.hero.headline}
+              </h1>
+              <p className="mt-7 max-w-[620px] text-lg leading-relaxed text-muted-foreground md:text-xl">
+                {d.hero.subhead}
+              </p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <PrimaryButton href={`${base}#contact`}>{d.hero.ctaPrimary}</PrimaryButton>
                 <SecondaryButton href={`${base}#services`}>{d.hero.ctaSecondary}</SecondaryButton>
@@ -34,7 +51,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
             <figure className="mx-auto w-full max-w-[320px] lg:max-w-[380px] lg:justify-self-end">
               <Image
                 src="/anna-hero-2.jpg"
-                alt={PERSON.name}
+                alt={settings.name}
                 width={800}
                 height={1000}
                 priority
@@ -64,15 +81,23 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
           <SectionTitle>{d.services.title}</SectionTitle>
           <div className="mt-10 grid gap-[22px] md:grid-cols-2 md:gap-[30px]">
             {d.services.items.map((s, i) => (
-              <div key={s.title} className="card-lift flex flex-col rounded-lg border border-border bg-background p-7 shadow-md md:p-8">
-                <span className="font-display text-2xl text-accent">{String(i + 1).padStart(2, "0")}</span>
+              <div
+                key={`${s.title}-${i}`}
+                className="card-lift flex flex-col rounded-lg border border-border bg-background p-7 shadow-md md:p-8"
+              >
+                <span className="font-display text-2xl text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <h3 className="mt-3 text-2xl">{s.title}</h3>
                 <p className="mt-3 leading-relaxed text-foreground/85">{s.body}</p>
               </div>
             ))}
           </div>
           <p className="mt-8 max-w-[620px] text-lg text-muted-foreground">{d.services.outro}</p>
-          <Link href={`${base}#contact`} className="mt-4 inline-block text-accent underline-offset-4 hover:underline">
+          <Link
+            href={`${base}#contact`}
+            className="mt-4 inline-block text-accent underline-offset-4 hover:underline"
+          >
             {d.services.link} →
           </Link>
         </Container>
@@ -91,7 +116,10 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
             </div>
           ) : (
             <div className="mt-8">
-              <a href={`mailto:${PERSON.email}`} className="btn inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-[500] text-white shadow-sm hover:shadow-md">
+              <a
+                href={`mailto:${settings.email}`}
+                className="btn inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-[500] text-white shadow-sm hover:shadow-md"
+              >
                 {d.contact.cta}
               </a>
             </div>
@@ -99,12 +127,26 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
           <div className="mt-10 flex flex-wrap gap-10 border-t border-white/10 pt-8 text-sm">
             <div>
               <Label>{d.contact.emailPrompt}</Label>
-              <a href={`mailto:${PERSON.email}`} className="mt-1 inline-block text-lg text-deep-fg transition hover:text-deep-fg/70">{PERSON.email}</a>
+              <a
+                href={`mailto:${settings.email}`}
+                className="mt-1 inline-block text-lg text-deep-fg transition hover:text-deep-fg/70"
+              >
+                {settings.email}
+              </a>
             </div>
-            <div>
-              <Label>{d.contact.linkedin}</Label>
-              <a href={PERSON.linkedin} target="_blank" rel="noreferrer" className="mt-1 inline-block text-lg text-deep-fg transition hover:text-deep-fg/70">LinkedIn</a>
-            </div>
+            {settings.linkedin && (
+              <div>
+                <Label>{d.contact.linkedin}</Label>
+                <a
+                  href={settings.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-1 inline-block text-lg text-deep-fg transition hover:text-deep-fg/70"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            )}
           </div>
         </Container>
       </section>

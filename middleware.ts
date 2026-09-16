@@ -18,4 +18,4 @@ export function middleware(request: NextRequest) {
   return NextResponse.redirect(url);
 }
 
-export const config = { matcher: ["/((?!_next|api|.*\\.[\\w]+$).*)"] };
+export const config = { matcher: ["/((?!_next|api|keystatic|.*\\.[\\w]+$).*)"] };
