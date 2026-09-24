@@ -11,7 +11,7 @@ hero:
 showProof: true
 proofPrefix: Trusted by teams at
 problem:
-  show: true
+  show: false
   title: Content that doesn't land, doesn't grow anything.
   body: >-
     I create content that connects, across social, web and email, in English,
@@ -40,7 +40,6 @@ nav:
   services: Services
   contact: Contact
   cta: Book a call
-footerTagline: Content and marketing that connects, wherever your audience is.
 seoTitle: Anna-Mariam Österlind · Content and marketing in English, French and Swedish
 seoDescription: >-
   Content and marketing that connects: web, email, organic and paid social, in
