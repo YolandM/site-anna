@@ -1,28 +1,30 @@
-nav:
-  services: Services
-  contact: Contact
-  cta: Réserver un appel
 hero:
-  eyebrow: Anglais · Français · Suédois
-  headline: Du contenu et du marketing qui touchent, où que soit votre audience.
-  subhead: Je suis Anna-Mariam Österlind. J'aide les entreprises à créer du contenu qui touche. De l'email et des landing pages au social organique et payant. J'écris en anglais, en français et en suédois.
+  eyebrow: Français · Anglais ·  Suédois
+  headline: Du contenu et du marketing qui résonnent, où que soit votre public.
+  subhead: >-
+    Je suis Anna-Mariam Österlind. J'aide les entreprises à créer du contenu qui
+    résonnent. Je fais de l'email marketing, des pages web et des réseaux
+    sociaux organiques et payants. J'écris en français, en anglais et en
+    suédois.
   ctaPrimary: Réserver un appel
   ctaSecondary: Voir les services
 proofPrefix: Des équipes m'ont fait confiance chez
 problem:
   title: Un contenu qui ne touche pas ne fait rien grandir.
-  body: Je crée du contenu qui touche, sur les réseaux, le web et l'email, en anglais, en français et en suédois.
+  body: >-
+    Je crée du contenu qui touche, sur les réseaux, le web et l'email, en
+    anglais, en français et en suédois.
 services:
   title: Façons de travailler ensemble
   items:
-  - title: Web
-    body: Blog, landing pages, pages produit et textes de site.
-  - title: Email
-    body: Campagnes, newsletters et emails lifecycle.
-  - title: Social organique
-    body: Textes, visuels, vidéos et community management.
-  - title: Social payant
-    body: Campagnes et créas, construites et pilotées sur Meta et LinkedIn.
+    - title: Web
+      body: Blog, landing pages, pages produit et textes de site.
+    - title: Email
+      body: Campagnes, newsletters et emails lifecycle.
+    - title: Social organique
+      body: Textes, visuels, vidéos et community management.
+    - title: Social payant
+      body: Campagnes et créas, construites et pilotées sur Meta et LinkedIn.
   outro: Un seul canal ou plusieurs combinés, selon où vous en êtes.
   link: Parlons de votre contenu
 contact:
@@ -31,6 +33,12 @@ contact:
   cta: Réserver un appel
   emailPrompt: Vous préférez l'email ?
   linkedin: LinkedIn
+nav:
+  services: Services
+  contact: Contact
+  cta: Réserver un appel
 footerTagline: Du contenu et du marketing qui touchent, où que soit votre audience.
 seoTitle: Anna-Mariam Österlind · Contenu et marketing en anglais, français et suédois
-seoDescription: 'Du contenu et du marketing qui touchent : web, email, social organique et payant, en anglais, français et suédois.'
+seoDescription: >-
+  Du contenu et du marketing qui touchent : web, email, social organique et
+  payant, en anglais, français et suédois.
