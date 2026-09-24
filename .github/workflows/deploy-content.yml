@@ -1,0 +1,31 @@
+# Anna-Mariam's Keystatic saves commit to this repo under her own GitHub
+# account. Vercel's free plan refuses to build commits from anyone who is not
+# the account owner, so those deployments get blocked.
+#
+# This calls a Vercel Deploy Hook instead, which triggers a build without
+# looking at who authored the commit. It only runs when the content files
+# change, so Yoland's own pushes keep deploying the normal way.
+#
+# Setup: create the hook in Vercel (Settings -> Git -> Deploy Hooks, branch
+# main) and store its URL as the repository secret VERCEL_DEPLOY_HOOK.
+
+name: Deploy content changes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger a Vercel deployment
+        run: |
+          if [ -z "${{ secrets.VERCEL_DEPLOY_HOOK }}" ]; then
+            echo "Missing repository secret VERCEL_DEPLOY_HOOK."
+            exit 1
+          fi
+          curl -fsS -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
+          echo "Deployment triggered."
