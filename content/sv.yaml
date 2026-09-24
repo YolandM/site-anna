@@ -7,13 +7,17 @@ hero:
     organiska och betalda sociala medier.
   ctaPrimary: Boka ett samtal
   ctaSecondary: Se tjänster
+  showCtaSecondary: true
+showProof: true
 proofPrefix: Företag jag jobbat med
 problem:
+  show: true
   title: Innehåll som når fram
   body: >-
     Jag skapar innehåll som väcker rätt känslor hos er målgrupp - på webben, i
     mailen och på sociala medier.
 services:
+  show: true
   title: Kanaler
   items:
     - title: Webb

@@ -69,7 +69,7 @@ export default async function LangLayout({
   return (
     <html lang={lang} className={`${fraunces.variable} ${dmSans.variable}`}>
       <body>
-        <Nav lang={lang} copy={dict.nav} name={settings.name} />
+        <Nav lang={lang} copy={dict.nav} name={settings.name} showServices={dict.services.show} />
         <main className="pt-14 sm:pt-16 lg:pt-20">{children}</main>
         <Footer tagline={dict.footer.tagline} settings={settings} />
       </body>

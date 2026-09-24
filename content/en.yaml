@@ -7,13 +7,17 @@ hero:
     French and Swedish.
   ctaPrimary: Book a call
   ctaSecondary: See services
+  showCtaSecondary: true
+showProof: true
 proofPrefix: Trusted by teams at
 problem:
+  show: true
   title: Content that doesn't land, doesn't grow anything.
   body: >-
     I create content that connects, across social, web and email, in English,
     French and Swedish.
 services:
+  show: true
   title: Ways to work together
   items:
     - title: Web

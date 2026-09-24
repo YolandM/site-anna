@@ -45,7 +45,9 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <PrimaryButton href={`${base}#contact`}>{d.hero.ctaPrimary}</PrimaryButton>
-                <SecondaryButton href={`${base}#services`}>{d.hero.ctaSecondary}</SecondaryButton>
+                {d.hero.showCtaSecondary && d.services.show && (
+                  <SecondaryButton href={`${base}#services`}>{d.hero.ctaSecondary}</SecondaryButton>
+                )}
               </div>
             </div>
             <figure className="mx-auto w-full max-w-[320px] lg:max-w-[380px] lg:justify-self-end">
@@ -63,9 +65,10 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
         </Container>
       </section>
 
-      <LogoRow title={d.proofLine.prefix} items={d.proofLine.names} />
+      {d.proofLine.show && <LogoRow title={d.proofLine.prefix} items={d.proofLine.names} />}
 
       {/* Problem */}
+      {d.problem.show && (
       <section className="bg-background-alt">
         <Container className="py-16 md:py-24">
           <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:gap-14">
@@ -74,8 +77,10 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
           </div>
         </Container>
       </section>
+      )}
 
       {/* Services */}
+      {d.services.show && (
       <section id="services" className="scroll-mt-20">
         <Container className="py-16 md:py-24">
           <SectionTitle>{d.services.title}</SectionTitle>
@@ -102,6 +107,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
           </Link>
         </Container>
       </section>
+      )}
 
       {/* Contact */}
       <section id="contact" className="scroll-mt-20 bg-deep text-deep-fg">

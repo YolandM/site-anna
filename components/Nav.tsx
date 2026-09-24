@@ -5,7 +5,19 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LANGS, type Lang, type Dictionary } from "@/lib/i18n";
 
-export default function Nav({ lang, copy, name }: { lang: Lang; copy: Dictionary["nav"]; name: string }) {
+export default function Nav({
+  lang,
+  copy,
+  name,
+  showServices = true,
+}: {
+  lang: Lang;
+  copy: Dictionary["nav"];
+  name: string;
+  /* Hidden when the Services section is switched off in the CMS,
+     so the menu never links to a section that isn't on the page. */
+  showServices?: boolean;
+}) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -20,7 +32,7 @@ export default function Nav({ lang, copy, name }: { lang: Lang; copy: Dictionary
 
   const base = `/${lang}`;
   const links = [
-    { href: `${base}#services`, label: copy.services },
+    ...(showServices ? [{ href: `${base}#services`, label: copy.services }] : []),
     { href: `${base}#contact`, label: copy.contact },
   ];
   const rest = pathname.replace(/^\/(en|fr|sv)/, "");

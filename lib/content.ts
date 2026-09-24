@@ -14,9 +14,10 @@ export async function getDictionary(lang: Lang): Promise<Dictionary> {
   return {
     nav: { ...d.nav },
     hero: { ...d.hero },
-    proofLine: { prefix: d.proofPrefix, names: PROOF },
+    proofLine: { show: d.showProof, prefix: d.proofPrefix, names: PROOF },
     problem: { ...d.problem },
     services: {
+      show: d.services.show,
       title: d.services.title,
       items: d.services.items.map((i) => ({ title: i.title, body: i.body })),
       outro: d.services.outro,

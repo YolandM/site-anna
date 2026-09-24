@@ -8,11 +8,15 @@ hero:
     suédois.
   ctaPrimary: Planifions un échange
   ctaSecondary: Voir les services
+  showCtaSecondary: true
+showProof: true
 proofPrefix: Des équipes m'ont fait confiance chez
 problem:
+  show: true
   title: Du contenu qui touche juste
   body: Je crée du contenu qui résonne - sur les réseaux, le web et par email.
 services:
+  show: true
   title: Façons de travailler ensemble
   items:
     - title: Web

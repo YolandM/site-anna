@@ -14,9 +14,19 @@ function pageCopy(label: string, path: string) {
           subhead: fields.text({ label: "Intro paragraph", multiline: true }),
           ctaPrimary: fields.text({ label: "Main button" }),
           ctaSecondary: fields.text({ label: "Second button" }),
+          showCtaSecondary: fields.checkbox({
+            label: "Show the second button",
+            defaultValue: true,
+          }),
         },
         { label: "Top of the page", description: "The first thing visitors read." }
       ),
+
+      showProof: fields.checkbox({
+        label: "Show the client logos",
+        description: "Uncheck to hide the whole logo strip on this language.",
+        defaultValue: true,
+      }),
 
       proofPrefix: fields.text({
         label: "Line above the client logos",
@@ -25,6 +35,7 @@ function pageCopy(label: string, path: string) {
 
       problem: fields.object(
         {
+          show: fields.checkbox({ label: "Show this section", defaultValue: true }),
           title: fields.text({ label: "Title", multiline: true }),
           body: fields.text({ label: "Text", multiline: true }),
         },
@@ -33,6 +44,7 @@ function pageCopy(label: string, path: string) {
 
       services: fields.object(
         {
+          show: fields.checkbox({ label: "Show this section", defaultValue: true }),
           title: fields.text({ label: "Section title" }),
           items: fields.array(
             fields.object({

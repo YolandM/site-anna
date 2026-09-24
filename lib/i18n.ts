@@ -21,10 +21,12 @@ export type Dictionary = {
     subhead: string;
     ctaPrimary: string;
     ctaSecondary: string;
+    showCtaSecondary: boolean;
   };
-  proofLine: { prefix: string; names: string[] };
-  problem: { title: string; body: string };
+  proofLine: { show: boolean; prefix: string; names: string[] };
+  problem: { show: boolean; title: string; body: string };
   services: {
+    show: boolean;
     title: string;
     items: { title: string; body: string }[];
     outro: string;
