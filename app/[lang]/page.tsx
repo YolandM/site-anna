@@ -113,37 +113,43 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
       {/* Contact */}
       <section id="contact" className="scroll-mt-20 bg-deep text-deep-fg">
         <Container className="py-20 md:py-28">
-          <div className="max-w-[720px]">
-            <h2 className="text-3xl md:text-4xl">{d.contact.title}</h2>
-            <p className="mt-4 text-lg text-deep-fg/75">{d.contact.body}</p>
-          </div>
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
+            {/* Left: the invitation */}
+            <div className="lg:pt-2">
+              <h2 className="text-3xl md:text-4xl">{d.contact.title}</h2>
+              <p className="mt-4 text-lg leading-relaxed text-deep-fg/75">{d.contact.body}</p>
 
-          {cal && (
-            <a
-              href={cal}
-              target="_blank"
-              rel="noreferrer"
-              className="btn mt-8 inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-[500] text-white shadow-sm hover:shadow-md"
-            >
-              {d.contact.cta}
-            </a>
-          )}
+              {cal && (
+                <a
+                  href={cal}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn mt-8 inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-[500] text-white shadow-sm hover:shadow-md"
+                >
+                  {d.contact.cta}
+                </a>
+              )}
 
-          <ContactForm copy={d.form} lang={lang} />
-
-          {settings.linkedin && (
-            <div className="mt-10 border-t border-white/10 pt-8 text-sm">
-              <Label>{d.contact.linkedin}</Label>
-              <a
-                href={settings.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-1 inline-block text-lg text-deep-fg transition hover:text-deep-fg/70"
-              >
-                LinkedIn
-              </a>
+              {settings.linkedin && (
+                <div className="mt-12 border-t border-white/10 pt-8">
+                  <Label>{d.contact.linkedin}</Label>
+                  <a
+                    href={settings.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-1 inline-block text-lg text-deep-fg transition hover:text-deep-fg/70"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+              )}
             </div>
-          )}
+
+            {/* Right: the form */}
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-7 md:p-9">
+              <ContactForm copy={d.form} lang={lang} />
+            </div>
+          </div>
         </Container>
       </section>
     </>

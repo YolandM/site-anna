@@ -32,7 +32,7 @@ export default function ContactForm({ copy, lang }: { copy: Dictionary["form"]; 
 
   if (state === "sent") {
     return (
-      <p className="mt-8 rounded-md border border-white/15 bg-white/5 px-5 py-4 text-lg text-deep-fg">
+      <p className="text-lg text-deep-fg">
         {copy.success}
       </p>
     );
@@ -42,7 +42,7 @@ export default function ContactForm({ copy, lang }: { copy: Dictionary["form"]; 
     "mt-2 w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 text-deep-fg placeholder:text-deep-fg/40 outline-none transition focus:border-white/40";
 
   return (
-    <form onSubmit={onSubmit} className="mt-8 max-w-[560px]">
+    <form onSubmit={onSubmit}>
       {/* Spam trap: real people never see this, bots fill it in. */}
       <div aria-hidden className="absolute left-[-9999px]">
         <label>
@@ -70,7 +70,7 @@ export default function ContactForm({ copy, lang }: { copy: Dictionary["form"]; 
       <button
         type="submit"
         disabled={state === "sending"}
-        className="btn mt-6 inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-[500] text-white shadow-sm transition hover:shadow-md disabled:opacity-60"
+        className="btn mt-6 w-full inline-flex sm:w-auto items-center justify-center rounded-md bg-accent px-6 py-3 font-[500] text-white shadow-sm transition hover:shadow-md disabled:opacity-60"
       >
         {state === "sending" ? copy.sending : copy.submit}
       </button>
