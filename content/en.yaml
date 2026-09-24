@@ -28,7 +28,7 @@ services:
   link: Let's talk about your content
 contact:
   title: Let's talk about your content.
-  body: Tell me what you need done, I'll tell you where I can help.
+  body: Book a call to talk about what you need done.
   cta: Book a call
   emailPrompt: Prefer email?
   linkedin: LinkedIn
