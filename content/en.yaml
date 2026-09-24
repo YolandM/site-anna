@@ -1,28 +1,29 @@
-nav:
-  services: Services
-  contact: Contact
-  cta: Book a call
 hero:
   eyebrow: English · French · Swedish
   headline: Content and marketing that connects, wherever your audience is.
-  subhead: I'm Anna-Mariam Österlind. I help companies create content that connects. From email and landing pages to organic and paid social. I write in English, French and Swedish.
+  subhead: >-
+    I'm Anna-Mariam Österlind and I help companies create content that connects
+    - from email and landing pages to organic and paid social. I write in
+    English, French and Swedish.
   ctaPrimary: Book a call
   ctaSecondary: See services
 proofPrefix: Trusted by teams at
 problem:
   title: Content that doesn't land, doesn't grow anything.
-  body: I create content that connects, across social, web and email, in English, French and Swedish.
+  body: >-
+    I create content that connects, across social, web and email, in English,
+    French and Swedish.
 services:
   title: Ways to work together
   items:
-  - title: Web
-    body: Blog, landing pages, product pages, and website copy.
-  - title: Email
-    body: Campaigns, newsletters and lifecycle emails.
-  - title: Organic social
-    body: Copy, visuals, videos and community management.
-  - title: Paid social
-    body: Campaigns and creative, built and managed across Meta and LinkedIn.
+    - title: Web
+      body: Blog, landing pages, product pages, and website copy.
+    - title: Email
+      body: Campaigns, newsletters and lifecycle emails.
+    - title: Organic social
+      body: Copy, visuals, videos and community management.
+    - title: Paid social
+      body: Campaigns and creative, built and managed across Meta and LinkedIn.
   outro: Pick one channel or combine a few, whatever fits where you're at.
   link: Let's talk about your content
 contact:
@@ -31,6 +32,12 @@ contact:
   cta: Book a call
   emailPrompt: Prefer email?
   linkedin: LinkedIn
+nav:
+  services: Services
+  contact: Contact
+  cta: Book a call
 footerTagline: Content and marketing that connects, wherever your audience is.
 seoTitle: Anna-Mariam Österlind · Content and marketing in English, French and Swedish
-seoDescription: 'Content and marketing that connects: web, email, organic and paid social, in English, French and Swedish.'
+seoDescription: >-
+  Content and marketing that connects: web, email, organic and paid social, in
+  English, French and Swedish.
