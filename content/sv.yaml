@@ -1,36 +1,44 @@
+hero:
+  eyebrow: Engelska · Franska · Svenska
+  headline: Innehåll och marknadsföring som når fram, oavsett var din målgrupp finns.
+  subhead: >-
+    Jag heter Anna-Mariam Österlind och jag hjälper företag att skapa innehåll
+    som når fram. Jag jobbar med webbinnehåll, emailmarknadsföring samt
+    organiska och betalda sociala medier, på engelska, franska och svenska.
+  ctaPrimary: Boka ett samtal
+  ctaSecondary: Se tjänster
+proofPrefix: Företag jag jobbat med
+problem:
+  title: Innehåll som når fram
+  body: >-
+    Jag skapar innehåll som väcker rätt känslor hos din målgrupp - på webben, i
+    mailen och på sociala medier.
+services:
+  title: Kanaler
+  items:
+    - title: Webb
+      body: Blogg, landningssidor, produktsidor och webbtexter.
+    - title: Mail
+      body: Kampanjer, nyhetsbrev och lifecycle-mail.
+    - title: Organisk social
+      body: Texter, bilder, video och community management.
+    - title: Betald social
+      body: Kampanjer och kreativt material på Meta och LinkedIn.
+  outro: Välj den eller de kanaler som passar er.
+contact:
+  title: Dags att prata innehåll.
+  body: Vad behöver ni hjälp med?
+  cta: Boka ett samtal
+  emailPrompt: Föredrar du e-post?
+  linkedin: LinkedIn
 nav:
   services: Tjänster
   contact: Kontakt
   cta: Boka ett samtal
-hero:
-  eyebrow: Engelska · Franska · Svenska
-  headline: Innehåll och marknadsföring som når fram, var din publik än finns.
-  subhead: Jag heter Anna-Mariam Österlind. Jag hjälper företag att skapa innehåll som når fram. Från e-post och landningssidor till organisk och betald social. Jag skriver på engelska, franska och svenska.
-  ctaPrimary: Boka ett samtal
-  ctaSecondary: Se tjänster
-proofPrefix: Anlitad av team på
-problem:
-  title: Innehåll som inte når fram får ingenting att växa.
-  body: Jag skapar innehåll som når fram, i sociala medier, på webben och via e-post, på engelska, franska och svenska.
-services:
-  title: Sätt att arbeta tillsammans
-  items:
-  - title: Webb
-    body: Blogg, landningssidor, produktsidor och webbtexter.
-  - title: E-post
-    body: Kampanjer, nyhetsbrev och lifecycle-mejl.
-  - title: Organisk social
-    body: Texter, bilder, video och community management.
-  - title: Betald social
-    body: Kampanjer och kreativt material, byggda och hanterade på Meta och LinkedIn.
-  outro: Välj en kanal eller kombinera några, det som passar där ni är just nu.
-  link: Låt oss prata om ert innehåll
-contact:
-  title: Låt oss prata om ert innehåll.
-  body: Berätta vad ni behöver få gjort, så berättar jag var jag kan hjälpa till.
-  cta: Boka ett samtal
-  emailPrompt: Föredrar du e-post?
-  linkedin: LinkedIn
 footerTagline: Innehåll och marknadsföring som når fram, var din publik än finns.
-seoTitle: Anna-Mariam Österlind · Innehåll och marknadsföring på engelska, franska och svenska
-seoDescription: 'Innehåll och marknadsföring som når fram: webb, e-post, organisk och betald social, på engelska, franska och svenska.'
+seoTitle: >-
+  Anna-Mariam Österlind · Innehåll och marknadsföring på engelska, franska och
+  svenska
+seoDescription: >-
+  Innehåll och marknadsföring som når fram: webb, e-post, organisk och betald
+  social, på engelska, franska och svenska.
