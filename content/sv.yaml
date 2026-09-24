@@ -11,7 +11,7 @@ hero:
 showProof: true
 proofPrefix: Företag jag jobbat med
 problem:
-  show: true
+  show: false
   title: Innehåll som når fram
   body: >-
     Jag skapar innehåll som väcker rätt känslor hos er målgrupp - på webben, i
