@@ -18,16 +18,16 @@ services:
     - title: Web
       body: Blog, pages de destination, pages produit et textes de site.
     - title: Email
-      body: Campagnes, newsletters et emails lifecycle.
-    - title: Social organique
+      body: Campagnes, newsletters et emails automatisés.
+    - title: Réseaux sociaux organiques
       body: Textes, visuels, vidéos et community management.
-    - title: Social payant
-      body: Campagnes et créas, construites et pilotées sur Meta et LinkedIn.
-  outro: Un seul canal ou plusieurs combinés, selon où vous en êtes.
+    - title: Réseaux sociaux payants
+      body: Campagnes et créations sur Meta et LinkedIn.
+  outro: Choisissez un canal, ou combinez-en plusieurs, selon vos besoins.
   link: Parlons de votre contenu
 contact:
   title: Parlons de votre contenu.
-  body: Dites-moi ce dont vous avez besoin, je vous dis où je peux aider.
+  body: Discutons de vos besoins lors d'un appel.
   cta: Réserver un appel
   emailPrompt: Vous préférez l'email ?
   linkedin: LinkedIn
