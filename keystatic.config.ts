@@ -66,11 +66,23 @@ function pageCopy(label: string, path: string) {
         {
           title: fields.text({ label: "Title", multiline: true }),
           body: fields.text({ label: "Text", multiline: true }),
-          cta: fields.text({ label: "Button" }),
-          emailPrompt: fields.text({ label: 'Label above the email, e.g. "Prefer email?"' }),
+          cta: fields.text({ label: "Booking button" }),
           linkedin: fields.text({ label: "Label above the LinkedIn link" }),
         },
         { label: "Contact" }
+      ),
+
+      form: fields.object(
+        {
+          nameLabel: fields.text({ label: "Name field" }),
+          emailLabel: fields.text({ label: "Email field" }),
+          messageLabel: fields.text({ label: "Message field" }),
+          submit: fields.text({ label: "Send button" }),
+          sending: fields.text({ label: "While sending" }),
+          success: fields.text({ label: "After sending" }),
+          error: fields.text({ label: "If it fails" }),
+        },
+        { label: "Contact form", description: "Wording of the form at the bottom of the page." }
       ),
 
       nav: fields.object(

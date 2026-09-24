@@ -6,7 +6,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { getDictionary, getSettings } from "@/lib/content";
 import { isLang, LANGS, type Lang } from "@/lib/i18n";
-import { SITE_URL, OG_LOCALE } from "@/lib/site";
+import { SITE_URL, OG_LOCALE, calLink } from "@/lib/site";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -69,7 +69,13 @@ export default async function LangLayout({
   return (
     <html lang={lang} className={`${fraunces.variable} ${dmSans.variable}`}>
       <body>
-        <Nav lang={lang} copy={dict.nav} name={settings.name} showServices={dict.services.show} />
+        <Nav
+          lang={lang}
+          copy={dict.nav}
+          name={settings.name}
+          showServices={dict.services.show}
+          cal={calLink(settings.calUrl)}
+        />
         <main className="pt-14 sm:pt-16 lg:pt-20">{children}</main>
         <Footer tagline={dict.footer.tagline} settings={settings} />
       </body>

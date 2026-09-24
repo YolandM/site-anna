@@ -24,6 +24,7 @@ export async function getDictionary(lang: Lang): Promise<Dictionary> {
       link: d.services.link,
     },
     contact: { ...d.contact },
+    form: { ...d.form },
     footer: { tagline: d.footerTagline },
     seo: { title: d.seoTitle, description: d.seoDescription },
   };

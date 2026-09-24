@@ -10,10 +10,13 @@ export default function Nav({
   copy,
   name,
   showServices = true,
+  cal = "",
 }: {
   lang: Lang;
   copy: Dictionary["nav"];
   name: string;
+  /* Cal.com booking link. Empty falls back to the contact section. */
+  cal?: string;
   /* Hidden when the Services section is switched off in the CMS,
      so the menu never links to a section that isn't on the page. */
   showServices?: boolean;
@@ -47,7 +50,7 @@ export default function Nav({
             <Link key={l.href} href={l.href} className="nav-link text-[15px] font-[550] text-nav">{l.label}</Link>
           ))}
           <LangSwitch current={lang} rest={rest} />
-          <Link href={`${base}#contact`} className="btn rounded-md border border-accent/40 bg-accent/5 px-4 py-2 text-[15px] font-[550] text-nav">{copy.cta}</Link>
+          <Link href={cal || `${base}#contact`} className="btn rounded-md border border-accent/40 bg-accent/5 px-4 py-2 text-[15px] font-[550] text-nav">{copy.cta}</Link>
         </nav>
 
         <button type="button" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((v) => !v)} className="flex h-10 w-10 items-center justify-center lg:hidden">
@@ -67,7 +70,7 @@ export default function Nav({
             ))}
             <div className="mt-2 flex items-center justify-between border-t border-border pt-4">
               <LangSwitch current={lang} rest={rest} />
-              <Link href={`${base}#contact`} className="rounded-md border border-accent/40 bg-accent/5 px-4 py-2 text-[15px] font-[550] text-nav">{copy.cta}</Link>
+              <Link href={cal || `${base}#contact`} className="rounded-md border border-accent/40 bg-accent/5 px-4 py-2 text-[15px] font-[550] text-nav">{copy.cta}</Link>
             </div>
           </div>
         </nav>

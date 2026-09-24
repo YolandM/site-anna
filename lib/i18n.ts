@@ -36,8 +36,16 @@ export type Dictionary = {
     title: string;
     body: string;
     cta: string;
-    emailPrompt: string;
     linkedin: string;
+  };
+  form: {
+    nameLabel: string;
+    emailLabel: string;
+    messageLabel: string;
+    submit: string;
+    sending: string;
+    success: string;
+    error: string;
   };
   footer: { tagline: string };
   seo: { title: string; description: string };

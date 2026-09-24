@@ -2,9 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import LogoRow from "@/components/LogoRow";
+import ContactForm from "@/components/ContactForm";
 import { getDictionary, getSettings } from "@/lib/content";
 import { isLang, type Lang } from "@/lib/i18n";
-import { calEmbedUrl } from "@/lib/site";
+import { calLink } from "@/lib/site";
 import {
   Container,
   PrimaryButton,
@@ -20,7 +21,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
   const d = await getDictionary(lang);
   const settings = await getSettings();
   const base = `/${lang}`;
-  const calSrc = calEmbedUrl(settings.calUrl);
+  const cal = calLink(settings.calUrl);
 
   return (
     <>
@@ -44,7 +45,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
                 {d.hero.subhead}
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
-                <PrimaryButton href={`${base}#contact`}>{d.hero.ctaPrimary}</PrimaryButton>
+                <PrimaryButton href={cal || `${base}#contact`}>{d.hero.ctaPrimary}</PrimaryButton>
                 {d.hero.showCtaSecondary && d.services.show && (
                   <SecondaryButton href={`${base}#services`}>{d.hero.ctaSecondary}</SecondaryButton>
                 )}
@@ -116,44 +117,33 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
             <h2 className="text-3xl md:text-4xl">{d.contact.title}</h2>
             <p className="mt-4 text-lg text-deep-fg/75">{d.contact.body}</p>
           </div>
-          {calSrc ? (
-            <div className="mt-10 overflow-hidden rounded-lg bg-background shadow-lg">
-              <iframe src={calSrc} title="Cal.com" className="h-[680px] w-full" loading="lazy" />
-            </div>
-          ) : (
-            <div className="mt-8">
+
+          {cal && (
+            <a
+              href={cal}
+              target="_blank"
+              rel="noreferrer"
+              className="btn mt-8 inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-[500] text-white shadow-sm hover:shadow-md"
+            >
+              {d.contact.cta}
+            </a>
+          )}
+
+          <ContactForm copy={d.form} lang={lang} />
+
+          {settings.linkedin && (
+            <div className="mt-10 border-t border-white/10 pt-8 text-sm">
+              <Label>{d.contact.linkedin}</Label>
               <a
-                href={`mailto:${settings.email}`}
-                className="btn inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-[500] text-white shadow-sm hover:shadow-md"
+                href={settings.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-1 inline-block text-lg text-deep-fg transition hover:text-deep-fg/70"
               >
-                {d.contact.cta}
+                LinkedIn
               </a>
             </div>
           )}
-          <div className="mt-10 flex flex-wrap gap-10 border-t border-white/10 pt-8 text-sm">
-            <div>
-              <Label>{d.contact.emailPrompt}</Label>
-              <a
-                href={`mailto:${settings.email}`}
-                className="mt-1 inline-block text-lg text-deep-fg transition hover:text-deep-fg/70"
-              >
-                {settings.email}
-              </a>
-            </div>
-            {settings.linkedin && (
-              <div>
-                <Label>{d.contact.linkedin}</Label>
-                <a
-                  href={settings.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-1 inline-block text-lg text-deep-fg transition hover:text-deep-fg/70"
-                >
-                  LinkedIn
-                </a>
-              </div>
-            )}
-          </div>
         </Container>
       </section>
     </>

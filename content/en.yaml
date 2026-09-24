@@ -35,6 +35,14 @@ contact:
   body: Book a call to talk about what you need done.
   cta: Book a call
   linkedin: LinkedIn
+form:
+  nameLabel: "Name"
+  emailLabel: "Email"
+  messageLabel: "Message"
+  submit: "Send"
+  sending: "Sending…"
+  success: "Thanks, your message is on its way. I'll get back to you shortly."
+  error: "That didn't go through. Try again, or reach me on LinkedIn."
 nav:
   services: Services
   contact: Contact

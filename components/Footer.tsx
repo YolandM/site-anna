@@ -10,12 +10,6 @@ export default function Footer({ tagline, settings }: { tagline: string; setting
             <p className="mt-3 text-sm text-deep-fg/70">{tagline}</p>
           </div>
           <div className="flex flex-col gap-3 text-sm">
-            <a
-              href={`mailto:${settings.email}`}
-              className="text-deep-fg/80 transition hover:text-deep-fg"
-            >
-              {settings.email}
-            </a>
             {settings.linkedin && (
               <a
                 href={settings.linkedin}

@@ -35,6 +35,14 @@ contact:
   body: Låt oss prata om vad du behöver hjälp med.
   cta: Boka ett möte
   linkedin: LinkedIn
+form:
+  nameLabel: "Namn"
+  emailLabel: "E-post"
+  messageLabel: "Meddelande"
+  submit: "Skicka"
+  sending: "Skickar…"
+  success: "Tack, ditt meddelande är skickat. Jag hör av mig snart."
+  error: "Det gick inte att skicka. Försök igen, eller hör av dig på LinkedIn."
 nav:
   services: Tjänster
   contact: Kontakt

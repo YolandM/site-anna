@@ -34,6 +34,14 @@ contact:
   body: Discutons de vos besoins lors d'un appel.
   cta: Planifions un échange
   linkedin: LinkedIn
+form:
+  nameLabel: "Nom"
+  emailLabel: "Email"
+  messageLabel: "Message"
+  submit: "Envoyer"
+  sending: "Envoi…"
+  success: "Merci, votre message est parti. Je reviens vers vous rapidement."
+  error: "L'envoi a échoué. Réessayez, ou écrivez-moi sur LinkedIn."
 nav:
   services: Services
   contact: Contact

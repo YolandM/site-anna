@@ -14,7 +14,8 @@
     "@markdoc/markdoc": "^0.5.9",
     "next": "^16.2.9",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "resend": "^6.28.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.4",
