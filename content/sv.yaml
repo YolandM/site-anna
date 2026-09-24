@@ -32,6 +32,7 @@ services:
   link: Boka ett möte
 contact:
   title: Dags att prata innehåll.
+  body: Låt oss prata om vad du behöver hjälp med.
   cta: Boka ett möte
   linkedin: LinkedIn
 nav:
