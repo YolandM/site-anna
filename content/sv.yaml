@@ -25,10 +25,11 @@ services:
     - title: Betald social
       body: Kampanjer och kreativt material på Meta och LinkedIn.
   outro: Välj de kanaler som passar er.
+  link: Boka ett möte
 contact:
   title: Dags att prata innehåll.
   body: Vad behöver ni hjälp med?
-  cta: Boka ett samtal
+  cta: Boka ett möte
   emailPrompt: Föredrar du e-post?
   linkedin: LinkedIn
 nav:
