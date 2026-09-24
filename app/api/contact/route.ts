@@ -32,7 +32,15 @@ export async function POST(req: Request) {
     return new Response("Missing or invalid fields", { status: 400 });
   }
 
-  const { email: to } = await getSettings();
+  /* The address lives in the CMS. If the file can't be read for any reason,
+     fall back to CONTACT_TO so a message is never silently lost. */
+  let to = process.env.CONTACT_TO ?? "";
+  try {
+    const settings = await getSettings();
+    if (settings.email) to = settings.email;
+  } catch {
+    // keep the fallback
+  }
   if (!to) return new Response("No recipient configured", { status: 500 });
 
   try {
@@ -45,7 +53,8 @@ export async function POST(req: Request) {
       text: `${name} <${email}> wrote from the ${lang.toUpperCase()} page:\n\n${message}`,
     });
     if (error) throw new Error(error.message);
-  } catch {
+  } catch (err) {
+    console.error("contact form:", err);
     return new Response("Could not send", { status: 502 });
   }
 
