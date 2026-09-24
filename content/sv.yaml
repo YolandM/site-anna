@@ -24,9 +24,9 @@ services:
       body: Blogg, landningssidor, produktsidor och webbtexter.
     - title: Mail
       body: Kampanjer, nyhetsbrev och lifecycle-mail.
-    - title: Organisk social
+    - title: Organiska sociala medier
       body: Texter, bilder, video och community management.
-    - title: Betald social
+    - title: Betalda sociala medier
       body: Kampanjer och kreativt material på Meta och LinkedIn.
   outro: Välj de kanaler som passar er.
   link: Boka ett möte
