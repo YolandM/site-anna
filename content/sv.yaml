@@ -33,7 +33,6 @@ services:
 contact:
   title: Dags att prata innehåll.
   cta: Boka ett möte
-  emailPrompt: Föredrar du e-post?
   linkedin: LinkedIn
 nav:
   services: Tjänster
