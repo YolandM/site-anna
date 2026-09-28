@@ -18,7 +18,7 @@ problem:
     mailen och på sociala medier.
 services:
   show: true
-  title: Kanaler
+  title: Sätt att jobba ihop
   items:
     - title: Webb
       body: Blogg, landningssidor, produktsidor och webbtexter.
@@ -28,21 +28,21 @@ services:
       body: Texter, bilder, video och community management.
     - title: Betalda sociala medier
       body: Kampanjer och kreativt material på Meta och LinkedIn.
-  outro: Välj de kanaler som passar er.
+  outro: Välj den eller de kanaler som passar er.
   link: Boka ett möte
 contact:
   title: Dags att prata innehåll.
-  body: Låt oss prata om vad du behöver hjälp med.
+  body: Låt oss prata om vad ni behöver hjälp med.
   cta: Boka ett möte
   linkedin: LinkedIn
 form:
-  nameLabel: "Namn"
-  emailLabel: "E-post"
-  messageLabel: "Meddelande"
-  submit: "Skicka"
-  sending: "Skickar…"
-  success: "Tack, ditt meddelande är skickat. Jag hör av mig snart."
-  error: "Det gick inte att skicka. Försök igen, eller hör av dig på LinkedIn."
+  nameLabel: Namn
+  emailLabel: E-post
+  messageLabel: Meddelande
+  submit: Skicka
+  sending: Skickar…
+  success: Tack, ditt meddelande är skickat. Jag hör av mig snart.
+  error: Det gick inte att skicka. Försök igen, eller hör av dig på LinkedIn.
 nav:
   services: Tjänster
   contact: Kontakt
